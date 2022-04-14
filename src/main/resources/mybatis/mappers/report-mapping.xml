@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="admin.ReportDAO" >
+<!-- 전체 내용 포함 목록 -->
+<!-- <select id="postReportList" resultType="postreportdto"> -->
+<!--  select * from postreport -->
+<!-- </select> -->
+
+<!--글 번호별 신고 횟수 -->
+<!-- <select id="reportList" resultType="reportdto"> -->
+<!-- select divisionname, nickname, posttitle, count(*) as count  -->
+<!-- from  -->
+<!-- division inner join postreport  -->
+<!-- on division.divisioncode = postreport.divisioncode -->
+<!-- inner join post -->
+<!-- on post.postnum = postreport.postnum -->
+<!-- inner join member -->
+<!-- on member.id = post.memberid -->
+<!-- group by postreport.postnum -->
+<!-- </select> -->
+
+<!-- view table -->
+<select id="postreportList" resultType="postreportjoindto">
+ select * from postreportjoin
+</select>
+
+<select id="postReportDetail" resultType="postreportdto" parameterType="int">
+ select * from postreport where postnum = #{postnum}
+</select>
+
+<select id="commentreportList" resultType="commentreportjoindto">
+ select * from commentreportjoin
+</select>
+
+<select id="commentReportDetail" resultType="commentreportdto" parameterType="int">
+ select * from commentreport where commentreportnum = #{commentreportnum}
+</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

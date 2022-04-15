@@ -13,8 +13,19 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 	//jquery code
-		
-	});
+    //  document.getElementById("modal_opne_btn").onclick = function() {
+    //     document.getElementById("modal").style.display="block";
+    //     //$('#myModal').show(); //.hide();
+    // }
+   
+    // document.getElementById("modal_close_btn").onclick = function() {
+    //     document.getElementById("modal").style.display="none";
+    // }     
+        $('#modal_open').click(function(){
+            $('.modal-body').append("모달창오픈");
+        });
+
+    });
 </script>
 </head>
 <body>
@@ -68,10 +79,38 @@
                 <div id="inner_space"></div>
                 <div id="content">
                     <!-- 컨텐츠 넣어주세요! -->
-<h1>관리자 로그인 화면</h1>
+                    <h1>관리자 로그인 화면</h1>
+<!-- Button trigger modal -->
+<button type="button" id="modal_open" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-bs-dismiss="modal">Close</button>
+          <button type="button" >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

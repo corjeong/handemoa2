@@ -7,6 +7,7 @@ public interface ReportService {
 	//게시글 신고기록 조회, 상세 조회
 	public List<PostReportJoinDTO> postReportList();
 	public List<PostReportDTO> postReportDetail(int postnum);
+	public List<PostReportJoinDTO> divisionPostReport(int divisioncode);
 	
 	//댓글 신고기록 조회, 상세 조회
 	public List<CommentReportJoinDTO> commentReportList();

@@ -12,6 +12,7 @@ public interface ReportDAO {
 	//게시판 신고관리
 	public List<PostReportJoinDTO> postreportList();	
 	public List<PostReportDTO> postReportDetail(int postnum);
+	public List<PostReportJoinDTO> divisionPostReport(int divisioncode);
 	
 	//댓글 신고관리
 	public List<CommentReportJoinDTO> commentreportList();	

@@ -22,6 +22,11 @@ public class ReportServiceImpl implements ReportService {
 	public List<PostReportDTO> postReportDetail(int postnum) {
 		return reportDAO.postReportDetail(postnum);
 	}
+	
+	@Override
+	public List<PostReportJoinDTO> divisionPostReport(int divisioncode) {
+		return reportDAO.divisionPostReport(divisioncode);
+	}
 
 	@Override
 	public List<CommentReportJoinDTO> commentReportList() {

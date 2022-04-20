@@ -7,8 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 @Mapper
-@Repository("reportDAO")
-public interface ReportDAO {
+@Repository("adminreportDAO")
+public interface AdminReportDAO {
 
 	//게시판 신고관리
 	public List<PostReportJoinDTO> postReportList(int[] page);

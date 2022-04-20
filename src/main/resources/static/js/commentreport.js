@@ -59,12 +59,12 @@
 
 		$("#modal_report").show();
 
-		var postnum = $(this).children('input').attr('value');
+		var commentnum = $(this).children('input').attr('value');
 		$('.reportdetail_body').remove();
 
 		$.ajax({
 			url: "/admincommentreport/detail",
-			data: { 'postnum': postnum },
+			data: { 'commentnum': commentnum },
 			type: 'post',
 			dataType: 'json',
 			success: function (data) {

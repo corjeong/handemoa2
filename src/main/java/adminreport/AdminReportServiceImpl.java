@@ -7,72 +7,72 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service("reportservice")
-public class ReportServiceImpl implements ReportService {
+@Service("adminreportservice")
+public class AdminReportServiceImpl implements AdminReportService {
 
 	@Autowired
-	@Qualifier("reportDAO")
-	ReportDAO reportDAO;
+	@Qualifier("adminreportDAO")
+	AdminReportDAO adminreportDAO;
 
 	@Override
 	public List<PostReportJoinDTO> postReportList(int[] page) {
-		return reportDAO.postReportList(page);
+		return adminreportDAO.postReportList(page);
 	}
 
 	@Override
 	public List<PostReportJoinDTO> divisionPostReport(Map<String, Integer> division) {
-		return reportDAO.divisionPostReport(division);
+		return adminreportDAO.divisionPostReport(division);
 	}
 
 	@Override
 	public int postReporTotalRows() {
-		return reportDAO.postReporTotalRows();
+		return adminreportDAO.postReporTotalRows();
 	}
 
 	@Override
 	public int postReportDivisionRows(int divisioncode) {
-		return reportDAO.postReportDivisionRows(divisioncode);
+		return adminreportDAO.postReportDivisionRows(divisioncode);
 	}
 
 	@Override
 	public List<PostReportDTO> postReportDetail(int postnum) {
-		return reportDAO.postReportDetail(postnum);
+		return adminreportDAO.postReportDetail(postnum);
 	}
 
 	@Override
 	public int deletePostReport(List<Integer> postnum) {
-		return reportDAO.deletePostReport(postnum);
+		return adminreportDAO.deletePostReport(postnum);
 	}
 
 	
 	@Override
 	public List<CommentReportJoinDTO> commentReportList(int[] page) {
-		return reportDAO.commentReportList(page);
+		return adminreportDAO.commentReportList(page);
 	}
 
 	@Override
 	public List<CommentReportJoinDTO> divisionCommentReport(Map<String, Integer> division) {
-		return reportDAO.divisionCommentReport(division);
+		return adminreportDAO.divisionCommentReport(division);
 	}
 
 	@Override
 	public int commentReporTotalRows() {
-		return reportDAO.commentReporTotalRows();
+		return adminreportDAO.commentReporTotalRows();
 	}
 
 	@Override
 	public int commentReportDivisionRows(int divisioncode) {
-		return reportDAO.commentReportDivisionRows(divisioncode);
+		return adminreportDAO.commentReportDivisionRows(divisioncode);
 	}
 
 	@Override
 	public List<CommentReportDTO> commentReportDetail(int postnum) {
-		return reportDAO.commentReportDetail(postnum);
+		return adminreportDAO.commentReportDetail(postnum);
 	}
 
 	@Override
 	public int deleteCommentReport(List<Integer> postnum) {
-		return reportDAO.deleteCommentReport(postnum);
+		return adminreportDAO.deleteCommentReport(postnum);
 	}
 	
 	

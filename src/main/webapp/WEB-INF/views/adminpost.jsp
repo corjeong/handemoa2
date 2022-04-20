@@ -18,11 +18,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel='stylesheet' type='text/css' href='/css/index.css'>
-<link rel='stylesheet' type='text/css' href='/css/report.css'>
-<link rel='stylesheet' type='text/css' href='/css/commentreport.css'>
+<link rel='stylesheet' type='text/css' href='/css/adminpost.css'>
 <script src='/js/index.js'></script>
 <script type="text/javascript" src='/js/adminreport.js'></script>
-<script type="text/javascript" src='/js/commentreport.js'></script>
+<script type="text/javascript" src='/js/postreport.js'></script>
 </head>
 <body>
 
@@ -52,7 +51,7 @@
                             <h4>신고관리</h4></a>
                     </div>
                     <div class="nav_list_area">
-                        <a href="/adminpost"> <!-- 해당 링크 이동 -->
+                        <a href="#"> <!-- 해당 링크 이동 -->
                             <h4>게시글/댓글관리</h4></a>
                     </div>
                     <div class="nav_list_area">
@@ -79,10 +78,11 @@
                 <div id="content">
 					<!-- 컨텐츠 넣어주세요! -->
 
-					<!-- 게시글 신고관리 / 댓글 신과관리 탭 -->
-					<div class="content_report_tab">
-						<div class="content_postreport_tab"><a href="/adminpostreport"><h3>게시글 신고관리</h3></a></div>
-						<div class="content_commentreport_tab"><a href="/admincommentreport"><h3>댓글 신고관리</h3></a></div>
+					<!-- 관리 탭 -->
+					<div class="content_tab">
+						<div class="content_tab_item" id="content_post_tab"><a href="/adminpost"><h3>게시글 관리</h3></a></div>
+						<div class="content_tab_item" id="content_comment_tab"><a href="#"><h3>댓글 관리</h3></a></div>
+						<div class="content_tab_item" id="content_history_tab"><a href="#"><h3>히스토리</h3></a></div>
 					</div>
 					<!-- 상세 검색 / 삭제 버튼-->
 					<div class="content_head">
@@ -92,7 +92,7 @@
 								<option value="1">커뮤니티</option>
 								<option value="2">강의랭킹</option>
 							</select>
-							댓글 분류 검색							
+							글 분류 검색							
 						</div>
 						<div class="content_head_item">
 							<img id="division_btn" src="/css/images/search_icon.png"/>
@@ -102,7 +102,7 @@
 						</div>
 					</div>
 
-					<!-- 댓글 신고 목록 -->
+					<!-- 게시글 목록-->
 					<div id="report_list">
 						<div class="list_head">
 							<div class="report">
@@ -110,73 +110,15 @@
 							</div>
 							<div class="report">글 분류</div>
 							<div class="report">닉네임</div>
-							<div class="report">댓글 내용</div>
+							<div class="report">글 제목</div>
 							<div class="report">신고 횟수</div>
 						</div>
-						<c:forEach var="comment" items="${commentReportList}" varStatus="i">
-							<div class="list_body">
-								<div class="list_row">
-									<div class="report">
-										<input type="checkbox" name="ck_report" value="${comment.commentnum }">
-									</div>
-									<div class="report">${comment.divisionname }</div>
-									<div class="report">${comment.nickname }</div>
-									<div class="report">
-										<span class="toggle" id="${i.count }">${comment.commentcontent }
-											<input type="hidden" value="${comment.commentnum }">
-										</span>
-									</div>
-									<div class="report">${comment.count }</div>
-								</div>								
-							</div>
-						</c:forEach>
+						
 					</div> <!-- report_list end -->
 
 					<!-- 페이지 번호 -->
 					<div id="report_page">
-						<div class="direction_prev">
-							<div class="direction_first_page">
-								<c:if test="${reportpagedto.currentpage != 1}">
-									<a class="true" href="/admincommentreport/division?divisioncode=${divisioncode}&currentpage=1">&lt;&lt;</a>
-								</c:if>
-								<c:if test="${reportpagedto.currentpage == 1}">
-									<a class="false">&lt;&lt;</a>
-								</c:if>
-							</div>
-							<div class="direction_prev_page">
-								<c:if test="${reportpagedto.hasPrevPage == true}">
-									<a class="true" href='/admincommentreport/division?divisioncode=${divisioncode}&currentpage=${reportpagedto.currentpage -1}'>&lt;</a>
-								</c:if>
-								<c:if test="${reportpagedto.hasPrevPage == false}">
-									<a class="false">&lt;</a>
-								</c:if>							
-							</div>
-						</div>
-
-						<c:forEach var="i" begin="${reportpagedto.beginPage}" end="${reportpagedto.endPage }">
-							<div class="page">
-								<a class="pagenum" href='/admincommentreport/division?divisioncode=${divisioncode}&currentpage=${i }'>${i}</a>
-							</div>						
-						</c:forEach>
-							
-						<div class="direction_next">
-							<div class="direction_next_page">
-								<c:if test="${reportpagedto.hasNextPage == true}">
-									<a class="true" href='/admincommentreport/division?divisioncode=${divisioncode}&currentpage=${reportpagedto.currentpage + 1}'>&gt;</a>
-								</c:if>
-								<c:if test="${reportpagedto.hasNextPage == false}">
-									<a class="false">&gt;</a>
-								</c:if>
-							</div>
-							<div class="direction_last_page">
-								<c:if test="${reportpagedto.currentpage != reportpagedto.totalPage}">
-									<a class="true" href="/admincommentreport/division?divisioncode=${divisioncode}&currentpage=${reportpagedto.totalPage}">&gt;&gt;</a>
-								</c:if>
-								<c:if test="${reportpagedto.currentpage == reportpagedto.totalPage}">
-									<a class="false">&gt;&gt;</a>
-								</c:if>
-							</div>
-						</div>						
+												
 					</div> <!-- 페이지번호 end-->
 
 					<!-- 신고 상세 내역 모달창 -->

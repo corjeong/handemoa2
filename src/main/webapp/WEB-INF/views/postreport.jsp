@@ -21,7 +21,7 @@
 <link rel='stylesheet' type='text/css' href='/css/report.css'>
 <link rel='stylesheet' type='text/css' href='/css/postreport.css'>
 <script src='/js/index.js'></script>
-<script type="text/javascript" src='/js/report.js'></script>
+<script type="text/javascript" src='/js/adminreport.js'></script>
 <script type="text/javascript" src='/js/postreport.js'></script>
 </head>
 <body>
@@ -52,7 +52,7 @@
                             <h4>신고관리</h4></a>
                     </div>
                     <div class="nav_list_area">
-                        <a href="#"> <!-- 해당 링크 이동 -->
+                        <a href="/adminpost"> <!-- 해당 링크 이동 -->
                             <h4>게시글/댓글관리</h4></a>
                     </div>
                     <div class="nav_list_area">

@@ -16,15 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ReportController {
+public class AdminReportController {
 	
 	@Autowired
-	@Qualifier("reportservice")
-	ReportService service;
+	@Qualifier("adminreportservice")
+	AdminReportService service;
 	
 	//페이지 출력 행, 페이지 수 고정값
 	private int limitRows = 8;
 	private int limitPage = 5;
+	
+	@RequestMapping("/adminpost")
+	public String post() {
+		return "adminpost";
+	}
 	
 	@RequestMapping("/adminpostreport")
 	public ModelAndView postReportList() {

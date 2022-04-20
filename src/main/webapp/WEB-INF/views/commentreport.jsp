@@ -19,10 +19,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel='stylesheet' type='text/css' href='/css/index.css'>
 <link rel='stylesheet' type='text/css' href='/css/report.css'>
-<link rel='stylesheet' type='text/css' href='/css/postreport.css'>
+<link rel='stylesheet' type='text/css' href='/css/commentreport.css'>
 <script src='/js/index.js'></script>
 <script type="text/javascript" src='/js/report.js'></script>
-<script type="text/javascript" src='/js/postreport.js'></script>
+<script type="text/javascript" src='/js/commentreport.js'></script>
 </head>
 <body>
 
@@ -102,7 +102,7 @@
 						</div>
 					</div>
 
-					<!-- 게시글 신고 목록 -->
+					<!-- 댓글 신고 목록 -->
 					<div id="report_list">
 						<div class="list_head">
 							<div class="report">
@@ -113,20 +113,20 @@
 							<div class="report">글 제목</div>
 							<div class="report">신고 횟수</div>
 						</div>
-						<c:forEach var="post" items="${postReportList}" varStatus="i">
+						<c:forEach var="comment" items="${commentReportList}" varStatus="i">
 							<div class="list_body">
 								<div class="list_row">
 									<div class="report">
-										<input type="checkbox" name="ck_report" value="${post.postnum }">
+										<input type="checkbox" name="ck_report" value="${comment.commentnum }">
 									</div>
-									<div class="report">${post.divisionname }</div>
-									<div class="report">${post.nickname }</div>
+									<div class="report">${comment.divisionname }</div>
+									<div class="report">${comment.nickname }</div>
 									<div class="report">
-										<span class="toggle" id="${i.count }">${post.posttitle }
-											<input type="hidden" value="${post.postnum }">
+										<span class="toggle" id="${i.count }">${comment.commentcontent }
+											<input type="hidden" value="${comment.commentnum }">
 										</span>
 									</div>
-									<div class="report">${post.count }</div>
+									<div class="report">${comment.count }</div>
 								</div>								
 							</div>
 						</c:forEach>
@@ -137,7 +137,7 @@
 						<div class="direction_prev">
 							<div class="direction_first_page">
 								<c:if test="${reportpagedto.currentpage != 1}">
-									<a class="true" href="/adminpostreport/division?divisioncode=${divisioncode}&currentpage=1">&lt;&lt;</a>
+									<a class="true" href="/admincommentreport/division?divisioncode=${divisioncode}&currentpage=1">&lt;&lt;</a>
 								</c:if>
 								<c:if test="${reportpagedto.currentpage == 1}">
 									<a class="false">&lt;&lt;</a>
@@ -145,7 +145,7 @@
 							</div>
 							<div class="direction_prev_page">
 								<c:if test="${reportpagedto.hasPrevPage == true}">
-									<a class="true" href='/adminpostreport/division?divisioncode=${divisioncode}&currentpage=${reportpagedto.currentpage -1}'>&lt;</a>
+									<a class="true" href='/admincommentreport/division?divisioncode=${divisioncode}&currentpage=${reportpagedto.currentpage -1}'>&lt;</a>
 								</c:if>
 								<c:if test="${reportpagedto.hasPrevPage == false}">
 									<a class="false">&lt;</a>
@@ -155,14 +155,14 @@
 
 						<c:forEach var="i" begin="${reportpagedto.beginPage}" end="${reportpagedto.endPage }">
 							<div class="page">
-								<a class="pagenum" href='/adminpostreport/division?divisioncode=${divisioncode}&currentpage=${i }'>${i}</a>
+								<a class="pagenum" href='/admincommentreport/division?divisioncode=${divisioncode}&currentpage=${i }'>${i}</a>
 							</div>						
 						</c:forEach>
 							
 						<div class="direction_next">
 							<div class="direction_next_page">
 								<c:if test="${reportpagedto.hasNextPage == true}">
-									<a class="true" href='/adminpostreport/division?divisioncode=${divisioncode}&currentpage=${reportpagedto.currentpage + 1}'>&gt;</a>
+									<a class="true" href='/admincommentreport/division?divisioncode=${divisioncode}&currentpage=${reportpagedto.currentpage + 1}'>&gt;</a>
 								</c:if>
 								<c:if test="${reportpagedto.hasNextPage == false}">
 									<a class="false">&gt;</a>
@@ -170,7 +170,7 @@
 							</div>
 							<div class="direction_last_page">
 								<c:if test="${reportpagedto.currentpage != reportpagedto.totalPage}">
-									<a class="true" href="/adminpostreport/division?divisioncode=${divisioncode}&currentpage=${reportpagedto.totalPage}">&gt;&gt;</a>
+									<a class="true" href="/admincommentreport/division?divisioncode=${divisioncode}&currentpage=${reportpagedto.totalPage}">&gt;&gt;</a>
 								</c:if>
 								<c:if test="${reportpagedto.currentpage == reportpagedto.totalPage}">
 									<a class="false">&gt;&gt;</a>

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*관리 탭*/
+.content_report_tab{
+	display:flex;
+	font-size: 20px;
+}
+.content_commentreport_tab {
+	width: 50%;	
+	height:50px;
+	margin: auto;
+    background-color: white;
+    text-align: center;
+    line-height: 50px;
+}
+.content_postreport_tab {
+	width: 50%;	
+	height:50px;
+	margin: auto;	
+	background-color: rgb(210, 210, 210);
+	text-align: center;
+	line-height: 50px;
+}
+.content_postreport_tab h3{
+	color: grey;
+}

@@ -1,4 +1,4 @@
-package admin;
+package adminreport;
 
 import org.springframework.stereotype.Component;
 

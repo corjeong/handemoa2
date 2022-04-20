@@ -1,4 +1,4 @@
-package admin;
+package adminreport;
 
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ public class CommentReportJoinDTO {
 	int divisioncode;
 	String divisionname;
 	String nickname;
-	int commentreportnum;
+	int commentnum;
 	String commentcontent;
 	int count;	
 }

@@ -6,10 +6,11 @@
 <!-- 1. sql 실행 결과 XXXDTO 매핑 -->
 <typeAliases>
 	<!-- 관리자 신고 관리 -->
-	<typeAlias type="admin.PostReportDTO" alias="postreportdto"/>
-	<typeAlias type="admin.CommentReportDTO" alias="commentreportdto"/>
-	<typeAlias type="admin.PostReportJoinDTO" alias="postreportjoindto"/>
-	<typeAlias type="admin.CommentReportJoinDTO" alias="commentreportjoindto"/>
+	<typeAlias type="adminreport.PostReportDTO" alias="postreportdto"/>
+	<typeAlias type="adminreport.CommentReportDTO" alias="commentreportdto"/>
+	<typeAlias type="adminreport.PostReportJoinDTO" alias="postreportjoindto"/>
+	<typeAlias type="adminreport.CommentReportJoinDTO" alias="commentreportjoindto"/>
+	<typeAlias type="adminreport.ReportPageDTO" alias="reportpagedto"/>
 </typeAliases>
 
 

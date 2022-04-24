@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import member.MemberDTO;
 
 @Controller
-public class BookMarkContoroller {
+public class BookMarkController {
 	
 	@Autowired
 	@Qualifier("bookmarkservice")
@@ -33,13 +34,14 @@ public class BookMarkContoroller {
 		HttpSession session = request.getSession();
 
 		Boolean isLogOn = (Boolean)session.getAttribute("isLogOn");
+		System.out.println("islognon" + isLogOn);
 		
 		//로그인 여부 체크
 		if(isLogOn == null || isLogOn == false){
 			return "redirect:/login";
 		}
-		else{
-			return "redirect:/bookmarkview?currentpage=1&searchtxt=";
+		else {
+		return "redirect:/bookmarkview?currentpage=1&searchtxt=";
 		}
 	}
 	
@@ -69,14 +71,19 @@ public class BookMarkContoroller {
 		mv.addObject("pagedto", pagedto);
 		mv.addObject("bookMarkList", bookMarkList);
 		
-		mv.setViewName("bookmark/bookmark");
+		mv.setViewName("bookmark/bookmarkview");
 		return mv;
 	}
 	
-	@RequestMapping("/bookmarkcheck")
-	public ModelAndView bookmarkcheck(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView();		
-		
+	@RequestMapping("/bookmarktest")
+	public String bookmarktest(HttpServletRequest request, Model model) {
+		//rank controller에 /rankingpost에 추가
+		model.addAttribute("checkBookMark", bookmarkcheck(request));
+		return "bookmark/bookmarkcheck";
+	}
+	
+	public int bookmarkcheck(HttpServletRequest request) {
+		int checkBookMark = 0;
 		HttpSession session = request.getSession();
 		Boolean isLogOn = (Boolean)session.getAttribute("isLogOn");
 		String loginid = null;
@@ -93,12 +100,10 @@ public class BookMarkContoroller {
 			bookmark.put("memberid", loginid);
 			bookmark.put("postnum", postnum);
 			
-			int checkBookMark = service.checkBookMark(bookmark);
-			mv.addObject("checkBookMark", checkBookMark);
+			checkBookMark = service.checkBookMark(bookmark);
 		}			
 		
-		mv.setViewName("bookmark/bookmarkcheck");
-		return mv;
+		return checkBookMark;
 	}
 	
 	@PostMapping("/bookmarkinsert")

@@ -1,12 +1,6 @@
 	/**
  * 
  */ 
- $(window).on('load', (function(){
-	//페이지 새로 고침 후 선택했던 카테고리 유지
-	const searchParams = new URLSearchParams(location.search);
-	var divisioncode = searchParams.get("divisioncode");
-
-})); //on ready
 
  	//북마크 버튼 클릭 이벤트
 	$(document).on('click', '.bookmark_btn', (function () {

@@ -75,41 +75,38 @@ h4{
 	height: 550px;
 }
 
-.list_head{
-	width: 100%;
+.list_body{
 	display:flex;
 	background-color: rgb(209, 209, 209) ;
-	margin-bottom: 10px;
-}
-.list_body, .list_row{
 	margin-bottom: 5px;
 }
 
-.list_row{
-	width: 100%;
-	display:flex;
-	background-color: #f4f4f4;
-}
-.report{
-	margin: 18px auto;
-	text-align: center;
-	white-space: nowrap;
-  	overflow: hidden;
-    text-overflow: ellipsis;  /*말줄임 적용*/
-}
-.report:first-child, .report:nth-child(3) {
-	width:7%;
+.list_item{
+	height: 100px;
+	margin:5px;
 }
 
-.report:nth-child(4), .report:nth-child(2){
-	width: 10%;
+.list_item:first-child{
+	background-color: grey;
 }
-.report:last-child { 
-	width:40%; 
+.bookmark_row{
+	display:inline-flex;
+	width:100%;
+	margin:3px;
+}
+.bookmark_item:first-child{
+	width:100px;
+}
+.bookmark_row:first-child > .bookmark_item{
+	margin-right: 5px;
+}
+.bookmark_row:nth-child(2) > .bookmark_item{
+	width:100%;
+	font-size:20px;
+	font-weight: bold;
 	white-space: nowrap;
   	overflow: hidden;
     text-overflow: ellipsis;  /*말줄임 적용*/
-	text-align: justify;
 }
 
 /* 페이지 번호 */

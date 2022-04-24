@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel='stylesheet' type='text/css' href='/css/index.css'>
-<link rel='stylesheet' type='text/css' href='/css/bookmark/bookmark.css'>
+<link rel='stylesheet' type='text/css' href='/css/bookmark/bookmarkview.css'>
 <script src='/js/index.js'></script>
-<script type="text/javascript" src='/js/bookmark/bookmark.js'></script>
+<script type="text/javascript" src='/js/bookmark/bookmarkview.js'></script>
 </head>
 <body>
 
@@ -103,13 +103,22 @@
 					<div id="bookmark_list">
 						<c:forEach var="bookmark" items="${bookMarkList}" varStatus="i">
 							<div class="list_body">
-								<div class="list_row">
-									<div class="report">${bookmark.author }</div>
-									<div class="report">${bookmark.classtitle }</div>
-									<div class="report">${bookmark.regdate }</div>
-									<div class="report">${bookmark.nickname }</div>
-									<div class="report">${bookmark.posttitle }</div>
-								</div>								
+								<div class="list_item">
+									<div class="bookmark_item">썸네일이미지</div>
+								</div>
+								<div class="list_item">
+									<div class="bookmark_row">
+										<div class="bookmark_item">${bookmark.regdate }</div>
+										<div class="bookmark_item">${bookmark.classtitle }</div>
+										<div class="bookmark_item">${bookmark.author }</div>
+									</div>
+									<div class="bookmark_row">
+										<div class="bookmark_item"><a href="/rankingpost?postnum=${bookmark.postnum}">${bookmark.posttitle }</a></div>
+									</div>	
+									<div class="bookmark_row">
+										<div class="bookmark_item">${bookmark.nickname }</div>
+									</div>	
+								</div>						
 							</div>
 						</c:forEach>
 					</div> <!-- report_list end -->

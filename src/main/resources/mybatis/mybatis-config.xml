@@ -18,7 +18,7 @@
 	<typeAlias type="bookmark.BookMarkDTO" alias="bookmarkdto"/>
 	<!-- 멤버 -->
 	<typeAlias type="member.MemberDTO" alias="memberdto"/>
-	
+
 </typeAliases>
 
 

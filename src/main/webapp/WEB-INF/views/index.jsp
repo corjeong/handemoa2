@@ -56,7 +56,7 @@
                             <h4>북마크</h4></a>
                     </div>
                     <div class="nav_list_area">
-                        <a href="#"> <!-- 해당 링크 이동 -->
+                        <a href="/ranking?catedetailcode=10&page=1"> <!-- 해당 링크 이동 -->
                             <h4>강의랭킹</h4></a>
                     </div>
                     <div class="nav_list_area">

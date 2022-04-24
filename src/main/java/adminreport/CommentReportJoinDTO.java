@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import lombok.Getter;
 import lombok.Setter;
 
-@Component
+@Component("commentReportJoinDTO")
 @Getter @Setter
 public class CommentReportJoinDTO {
 	int divisioncode;

@@ -16,14 +16,14 @@ public interface AdminReportDAO {
 	public int postReporTotalRows();
 	public int postReportDivisionRows(int divisioncode);
 	public List<PostReportDTO> postReportDetail(int postnum);
-	public int deletePostReport(List<Integer> postnum);
+	public int deletePostReport(List<Integer> postnums);
 	
 	//댓글 신고관리
 	public List<CommentReportJoinDTO> commentReportList(int[] page);
 	public List<CommentReportJoinDTO> divisionCommentReport(Map<String, Integer> division);
 	public int commentReporTotalRows();
 	public int commentReportDivisionRows(int divisioncode);
-	public List<CommentReportDTO> commentReportDetail(int postnum);
-	public int deleteCommentReport(List<Integer> postnum);
+	public List<CommentReportDTO> commentReportDetail(int commentnums);
+	public int deleteCommentReport(List<Integer> commentnums);
 	
 }

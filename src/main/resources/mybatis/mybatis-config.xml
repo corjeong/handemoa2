@@ -10,7 +10,15 @@
 	<typeAlias type="adminreport.CommentReportDTO" alias="commentreportdto"/>
 	<typeAlias type="adminreport.PostReportJoinDTO" alias="postreportjoindto"/>
 	<typeAlias type="adminreport.CommentReportJoinDTO" alias="commentreportjoindto"/>
-	<typeAlias type="adminreport.ReportPageDTO" alias="reportpagedto"/>
+	<typeAlias type="adminreport.AdminPageDTO" alias="adminpagedto"/>
+	<!-- 관리자 댓글 관리 -->
+	<typeAlias type="admincomment.AdminCommentJoinDTO" alias="admincommentjoindto"/>
+	<!-- 북마크 -->
+	<typeAlias type="bookmark.BookMarkJoinDTO" alias="bookmarkjoindto"/>
+	<typeAlias type="bookmark.BookMarkDTO" alias="bookmarkdto"/>
+	<!-- 멤버 -->
+	<typeAlias type="member.MemberDTO" alias="memberdto"/>
+	
 </typeAliases>
 
 

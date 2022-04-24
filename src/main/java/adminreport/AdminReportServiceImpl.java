@@ -40,8 +40,8 @@ public class AdminReportServiceImpl implements AdminReportService {
 	}
 
 	@Override
-	public int deletePostReport(List<Integer> postnum) {
-		return adminreportDAO.deletePostReport(postnum);
+	public int deletePostReport(List<Integer> postnums) {
+		return adminreportDAO.deletePostReport(postnums);
 	}
 
 	
@@ -66,13 +66,13 @@ public class AdminReportServiceImpl implements AdminReportService {
 	}
 
 	@Override
-	public List<CommentReportDTO> commentReportDetail(int postnum) {
-		return adminreportDAO.commentReportDetail(postnum);
+	public List<CommentReportDTO> commentReportDetail(int commentnum) {
+		return adminreportDAO.commentReportDetail(commentnum);
 	}
 
 	@Override
-	public int deleteCommentReport(List<Integer> postnum) {
-		return adminreportDAO.deleteCommentReport(postnum);
+	public int deleteCommentReport(List<Integer> commentnums) {
+		return adminreportDAO.deleteCommentReport(commentnums);
 	}
 	
 	

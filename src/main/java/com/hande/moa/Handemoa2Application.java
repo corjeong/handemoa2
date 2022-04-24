@@ -7,9 +7,17 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan
+@ComponentScan(basePackages = "report")
+@MapperScan(basePackages = "report")
+@ComponentScan(basePackages = "bookmark")
+@MapperScan(basePackages = "bookmark")
 @ComponentScan(basePackages = "adminreport")
 @MapperScan(basePackages = "adminreport")
+@ComponentScan(basePackages = "admincomment")
+@MapperScan(basePackages = "admincomment")
 @ComponentScan(basePackages = "admin")
+@ComponentScan(basePackages = "member")
+@MapperScan(basePackages = "member")
 public class Handemoa2Application {
 
 	public static void main(String[] args) {

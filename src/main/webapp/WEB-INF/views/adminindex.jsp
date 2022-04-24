@@ -34,7 +34,7 @@
         <div id="nav_area">
             <div id="nav_space">
                 <div id="logo">
-                    <a href="#"> 
+                    <a href="/adminindex"> 
                         <img src="css/images/logo.png" />
                     </a>
                 </div>
@@ -45,7 +45,7 @@
                     <h4 style="margin: 10px auto 0 auto;">관리자</h4>
                     <button id="nav_login_btn"	onclick="location.href='http://localhost:8083/adminlogout'">로그아웃</button>
                 </div>
-                 <div id="nav_list">
+                  <div id="nav_list">
                     <div class="nav_list_area">
                         <a href="/adminmember"> <!-- 해당 링크 이동 -->
                             <h4>회원관리</h4></a>
@@ -55,7 +55,7 @@
                             <h4>신고관리</h4></a>
                     </div>
                     <div class="nav_list_area">
-                        <a href="#"> <!-- 해당 링크 이동 -->
+                        <a href="/postmanage"> <!-- 해당 링크 이동 -->
                             <h4>게시글/댓글관리</h4></a>
                     </div>
                     <div class="nav_list_area">

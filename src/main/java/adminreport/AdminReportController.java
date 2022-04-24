@@ -25,12 +25,7 @@ public class AdminReportController {
 	//페이지 출력 행, 페이지 수 고정값
 	private int limitRows = 8;
 	private int limitPage = 5;
-	
-	@RequestMapping("/adminpost")
-	public String post() {
-		return "adminpost";
-	}
-	
+
 	@RequestMapping("/adminpostreport")
 	public ModelAndView postReportList() {
 		return postReportPaging(0, 1);
@@ -66,12 +61,12 @@ public class AdminReportController {
 			postReporTotalRows = service.postReportDivisionRows(divisioncode);
 		}
 		
-		ReportPageDTO reportpagedto = new ReportPageDTO(limitRows, limitPage, currentpage, postReporTotalRows);
+		AdminPageDTO reportpagedto = new AdminPageDTO(limitRows, limitPage, currentpage, postReporTotalRows);
 
 		mv.addObject("divisioncode", divisioncode);
 		mv.addObject("reportpagedto", reportpagedto);
 		mv.addObject("postReportList", postReportList);
-		mv.setViewName("postreport");	
+		mv.setViewName("adminreport/postreport");	
 		return mv;
 	}
 
@@ -91,6 +86,7 @@ public class AdminReportController {
 		return result;
 	}
 	
+	//댓글 신고 내역 페이지
 	@RequestMapping("/admincommentreport")
 	public ModelAndView commentReportList() {
 		return commentReportPaging(0, 1);
@@ -125,12 +121,12 @@ public class AdminReportController {
 			commentReporTotalRows = service.commentReportDivisionRows(divisioncode);
 		}
 		
-		ReportPageDTO reportpagedto = new ReportPageDTO(limitRows, limitPage, currentpage, commentReporTotalRows);
+		AdminPageDTO reportpagedto = new AdminPageDTO(limitRows, limitPage, currentpage, commentReporTotalRows);
 
 		mv.addObject("divisioncode", divisioncode);
 		mv.addObject("reportpagedto", reportpagedto);
 		mv.addObject("commentReportList", commentReportList);
-		mv.setViewName("commentreport");	
+		mv.setViewName("adminreport/commentreport");	
 		return mv;
 	}
 
